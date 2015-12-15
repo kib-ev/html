@@ -1,0 +1,270 @@
+//@import url(https://fonts.googleapis.com/css?family=Roboto:400,700italic&subset=latin,cyrillic);
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box !important;
+    outline: none;
+    outline-width: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ul, ol { list-style-type: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+@font-color-default: #333;
+@link-color-default: #006294;
+@link-color-hover: #006294;
+
+
+/** Максимальная ширина сайта **/
+@site-width: 1100px;
+
+/** Минимальная ширина сайта **/
+@min-site-width: 320px;
+
+/** Задать ширину левого сайдбара **/
+@left-sidebar-width: 270px;
+
+/** Задать ширину правого сайдбара **/
+@right-sidebar-width: 0px;
+
+/** Ширина области контента - вычисляеться автоматически (не используеться) **/
+@content-width: @site-width - @left-sidebar-width - @right-sidebar-width;
+
+/********************************************************************************* FONTS ***/
+
+// @font-face {
+//   font-family: "Century751";
+//   src: local("Century751"),
+//       url("../fonts/century751-sebd-bt-semi-bold.ttf");
+// }
+// .Century751 {
+//  font-family: "Century751";
+//  font-weight: normal;
+// }
+
+/*********************************************************************************** CSS ***/
+h6 { font-size: 18px; }
+h5 { font-size: 22px; }
+h4 { font-size: 26px; }
+h3 { font-size: 30px; }
+h2 { font-size: 35px; }
+h1 { font-size: 40px; }
+
+.hide { display: none; }
+.clear { clear: both; }
+
+a { color: @link-color-default; }
+a:hover { color: @link-color-hover; }
+
+strong, b { font-weight: bold; }
+em { font-style: italic; }
+
+/********************************************************************************** BODY ***/
+body {
+    color: @font-color-default;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    font-size: 16px;
+}
+/** 
+  * Верстка сайта разбита на горизонтальные уровни (например: #header, #main, #footer)
+  * Идентификатор (id) уровня может быть любым, его название не влияет на верстку
+  * Внутри уровня обязательный вложенный блок .wrapper
+  * Стили далее отражают сказанное выше...
+**/
+body > * > .wrapper {
+    width: @site-width;
+    max-width: 100%;
+    min-width: @min-site-width;
+    margin: 0px auto;
+    overflow: hidden;
+    clear: both;
+    
+    /** Отступ от границ блоков **/
+    > * {
+        padding: 5px;
+        background: #FFF;
+    }
+    
+    /** Временное выделение границ блоков **/
+    * {
+        //border: 1px solid #666;
+    }
+}
+/** 
+ * Уровень #main делиться на колонки: #left-col, #center-col, #right-col
+**/
+#right-col, #center-col {
+    padding: 5px;
+    vertical-align: top;
+}
+#left-col {
+    float: left;    
+}
+#right-col {
+    float: right;    
+}
+#center-col {
+    // width: @content-width + @left-sidebar-width + @right-sidebar-width;
+    padding: 5px;
+    max-width: 100%;
+    min-width: @min-site-width;
+    vertical-align: top;
+    overflow: hidden;
+    min-height: 500px;
+}
+/**
+  * В зависимости от количества колонок на сайте, 
+  * необходимо раскомментировать или закомментировать
+  * соответствующий код ниже
+  *
+/************************************************************** только центральная колонка ***/
+// #right-col {
+//     display: none;
+// }
+// #left-col {
+//     display: none;
+// }
+// #center-col {
+//   width: @content-width + @right-sidebar-width + @left-sidebar-width; 
+// }
+/************************************************************* левая и центральная колонки ***/
+#left-col {
+    width: @left-sidebar-width;
+}
+#center-col {
+  max-width: @content-width + @right-sidebar-width; 
+}
+#right-col {
+    display: none;
+}
+/************************************************************ правая и центральная колонки ***/
+// #right-col {
+//     width: @right-sidebar-width;
+// }
+// #center-col {
+//   width: @content-width + @left-sidebar-width; 
+// }
+// #left-col {
+//     display: none;
+// }
+/***************************************************** правая, левая и центральная колонки ***/
+// #right-col {
+//     width: @right-sidebar-width;
+// }
+// #center-col {
+//     width: @content-width;
+// } 
+// #left-col {
+//     width: @left-sidebar-width;
+// }
+/*********************************************************************************************/
+
+/* * * SIDEBAERS * * */
+
+
+#left-col, #right-col {
+    margin: 0px auto;
+    
+    .widget {
+        // padding: 0px 10px 30px 10px;
+        
+        h3 {
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            // margin: 8px 0px;
+            display: inline-block;
+            width: 100%;
+        }
+        a {
+            // padding: 8px 0px;
+            display: inline-block;
+        }
+    }
+}
+
+
+/**************************************** for new site ********************/
+
+
+body {
+    background: #E6E6E6;
+}
+#header {
+
+    .hgroup {
+        .site-title {
+            
+        }
+        .site-description {
+            
+        }    
+    }
+    
+    a {
+        
+    }
+}
+
+#header {
+    
+    > div {
+     
+        div#logo {
+            float: left;
+        }
+        ul#top-menu {
+            float: left;
+            
+            > li {
+                display: inline-block;
+                vertical-align: top;
+                
+                
+            }
+            a {
+                padding: 10px;    
+            }
+            
+        }
+        div.top_search {
+            float: right;
+        }
+    }
+}
+/************* breadcrumbs *************/
+.breadcrumb {
+    margin: 0px;
+    padding: 0px;
+    a {
+        text-decoration: underline dotted;
+    }
+    a:hover {
+        text-decoration: underline none;
+    }
+}
+ 
+/** FOOTER **/
+#footer > .wrapper {
+    
+    > * {
+        width: 25%;
+        float: left;
+        min-width: @site-width/4;
+    }
+}
+/**************************************** woocommerce *********************/
+
+ul.products {
+    padding: 0px !important;
+    
+    li {
+        list-style-type: none !important;
+    }
+}
