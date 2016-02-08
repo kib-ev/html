@@ -43,6 +43,33 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; }
 strong, b { font-weight: bold; }
 em { font-style: italic; }
 
+#default-article-style {
+    font-size: 14px;
+
+    p, ul, ol, table, hr {
+        margin: 0px 0px 10px 0px;
+    }
+    ul, ol {
+        padding: 0px 0px 0px 30px;
+    } 
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: number;
+    }
+    table {
+        th, td {
+            padding: 5px;
+            border: 1px solid #E4E4E4;
+        }
+    }
+    hr {
+        height: 1px;
+        background: #E4E4E4;
+    }
+}
+
 /********************************************************************************** BODY ***/
 
 /** Максимальная ширина сайта **/
@@ -188,6 +215,10 @@ body {
             float: right;
         }
     }
+}
+#center-col {
+
+    #default-article-style;
 }
 
 /** FOOTER **/
